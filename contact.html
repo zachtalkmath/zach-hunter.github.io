@@ -12,7 +12,7 @@
 
 <p><a href="index.html">Home</a> | <a href="ack.html">On acknowledgments</a> | <a href="cvrs.html">CV and research statement</a></p>
 
-    <!--#include file="navigation.html" -->
+<div id="nav-placeholder"></div>
 
 <p>Email: zach.hunter at math.ethz.ch or zachtalkmath at gmail.com  -- I welcome any questions/comments about my work. I love to talk about mathematics, so I am also open to being contacted out of the blue to discuss problems that you believe may be of interest to me. </p>
 
@@ -20,4 +20,16 @@
         <label for="style-toggle">Toggle Style</label>
         <input type="checkbox" id="style-toggle">
 </footer>
+
+    <script>
+        // Function to include HTML content
+        function loadHTML(elementId, fileName) {
+            fetch(fileName)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data);
+        }
+
+        loadHTML('nav-placeholder', 'navigation.html');
+        loadHTML('footer-placeholder', 'footer.html');
+    </script>
 </body>
